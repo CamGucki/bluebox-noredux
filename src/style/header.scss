@@ -1,0 +1,16 @@
+.header {
+	display: flex;
+	justify-content: center;
+	height: 80px;
+
+	&__img {
+		height: 78px;
+	}
+}
+
+.sign-in-btn {
+	display: flex;
+	justify-content: flex-start;
+	font-size: medium;
+	padding-left: 2550px;
+}

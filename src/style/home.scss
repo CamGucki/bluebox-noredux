@@ -1,0 +1,35 @@
+.page-container {
+	display: flex;
+}
+.category-filter {
+	padding: 10px;
+}
+.category-btn {
+	width: 465px;
+	height: 37px;
+	color: white;
+	background: #3885ce !important;
+	font-size: 20px;
+	border-radius: 10px;
+}
+.movie-items {
+	display: flex;
+	justify-content: center;
+	grid-gap: 20px;
+}
+.movie-item img {
+	display: flex;
+	justify-content: center;
+	height: 375px;
+	width: 350px;
+}
+.movie-item {
+	height: 375px;
+	box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.3);
+}
+.movie-item {
+	color: #3885ce;
+	font-family: "Luxurious Roman ";
+	font-size: 20px;
+	font-weight: 500;
+}
