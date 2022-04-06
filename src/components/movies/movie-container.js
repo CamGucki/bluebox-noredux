@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import MovieItem from "./movie-item";
+import MovieModal from "../modals/movie-modal";
 
 export default class MovieContainer extends Component {
 	constructor() {
@@ -10,31 +11,49 @@ export default class MovieContainer extends Component {
 		this.state = {
 			isLoading: false,
 			data: [],
+			movieModalIsOpen: false,
 		};
 
 		this.handleFilter = this.handleFilter.bind(this);
 		this.getMovies = this.getMovies.bind(this);
+		this.handleNewMovieClick = this.handleNewMovieClick.bind(this);
+		this.handleModalClose = this.handleModalClose.bind(this);
 	}
-	getMovies() {
+
+	handleModalClose() {
+		this.setState({ movieModalIsOpen: false });
+	}
+
+	handleNewMovieClick() {
+		this.setState({ movieModalIsOpen: true });
+	}
+
+	handleFilter(filter) {
+		if (filter === "CLEAR_FILTER") {
+			this.getMovies();
+		} else {
+			this.getMovies(filter);
+		}
+	}
+	getMovies(filter = null) {
 		axios
 			.get("http://127.0.0.1:5000/movies")
 			.then((response) => {
-				console.log(response);
-				this.setState({
-					data: response.data,
-				});
+				if (filter) {
+					this.setState({
+						data: response.data.filter((movie) => {
+							return movie.category === filter;
+						}),
+					});
+				} else {
+					this.setState({
+						data: response.data,
+					});
+				}
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-	}
-
-	handleFilter(filter) {
-		this.setState({
-			data: this.state.data.filter((movie) => {
-				return movie.category === filter;
-			}),
-		});
 	}
 
 	movieItems() {
@@ -42,6 +61,7 @@ export default class MovieContainer extends Component {
 			console.log("movie data", movie);
 			return (
 				<MovieItem
+					key={movie.id}
 					title={movie.title}
 					description={movie.description}
 					movieImg={movie.movieImg}
@@ -60,6 +80,10 @@ export default class MovieContainer extends Component {
 
 		return (
 			<div className='movie-container'>
+				<div className='new-movie-link'>
+					<a onClick={this.handleNewMovieClick}>+ Add Movie</a>
+				</div>
+
 				<div className='category-filter'>
 					<button
 						className='category-btn'
@@ -97,7 +121,20 @@ export default class MovieContainer extends Component {
 					>
 						Kids/Family
 					</button>
+					<button
+						className='category-btn'
+						onClick={() => this.handleFilter("CLEAR_FILTER")}
+					>
+						ALL
+					</button>
 				</div>
+				<div className='addmovie-modal'>
+					<MovieModal
+						handleModalClose={this.handleModalClose}
+						modalIsOpen={this.state.movieModalIsOpen}
+					/>
+				</div>
+
 				<div className='movie-items'>{this.movieItems()}</div>
 			</div>
 		);

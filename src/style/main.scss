@@ -21,12 +21,11 @@ body {
 	-webkit-tap-highlight-color: transparent;
 }
 
-.app {
-	display: grid;
-	justify-items: center;
-}
 // Header
 @import "header.scss";
 
 //home
 @import "home.scss";
+
+//auth
+@import "./auth/auth.scss";
