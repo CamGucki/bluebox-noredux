@@ -1,0 +1,10 @@
+@media (max-width: 650px) {
+	.category-filter {
+		display: grid;
+		grid-template-columns: 2fr;
+	}
+	.movie-items {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}

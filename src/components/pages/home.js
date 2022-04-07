@@ -3,6 +3,6 @@ import MovieContainer from "../movies/movie-container";
 
 export default class HomePage extends Component {
 	render() {
-		return <MovieContainer />;
+		return <MovieContainer key='movie-wrapper' />;
 	}
 }

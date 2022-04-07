@@ -60,3 +60,48 @@ input[type="radio"] {
 		cursor: pointer;
 	}
 }
+
+.add-movie-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+	input {
+		color: charcoal;
+		padding: 5px 0px;
+		width: 100%;
+		border-top: 0px;
+		border-right: 0px;
+		border-left: 0px;
+		border-bottom: 1px solid #3885ce;
+		background-color: transparent;
+		transition: 0.5s all ease-in-out;
+		font-size: 25px;
+		margin-bottom: 21px;
+		&:focus {
+			outline: none;
+			border-bottom: 1px solid black;
+		}
+	}
+}
+
+.add-movie-btn {
+	cursor: pointer;
+	height: 42px;
+	font-size: 25px;
+	font-weight: 500;
+	border: 1px solid transparent;
+	transition: all 0.5s ease-in-out;
+	background-color: #3885ce;
+	color: white;
+	border-radius: 10px;
+	width: 300px;
+
+	&:active,
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		background-color: #3885ce;
+	}
+}

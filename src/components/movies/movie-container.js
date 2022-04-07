@@ -130,6 +130,7 @@ export default class MovieContainer extends Component {
 				</div>
 				<div className='addmovie-modal'>
 					<MovieModal
+						key='modal'
 						handleModalClose={this.handleModalClose}
 						modalIsOpen={this.state.movieModalIsOpen}
 					/>

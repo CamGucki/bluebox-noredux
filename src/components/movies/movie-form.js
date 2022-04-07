@@ -38,7 +38,11 @@ export default class MovieForm extends Component {
 	}
 	render() {
 		return (
-			<form onSubmit={this.handleSubmit}>
+			<form
+				onSubmit={this.handleSubmit}
+				className='add-movie-form'
+				onChange={this.handleChange}
+			>
 				<input
 					value={this.state.title}
 					placeholder='Movie title'
@@ -68,7 +72,7 @@ export default class MovieForm extends Component {
 					type='text'
 				/>
 
-				<button>Save</button>
+				<button className='add-movie-btn'>Save</button>
 			</form>
 		);
 	}

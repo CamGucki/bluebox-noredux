@@ -8,7 +8,7 @@ export default class MovieItem extends Component {
 			<div className='movie-item'>
 				<img className='movie__image' src={movieImg} alt='Logoimg/50x50'></img>
 				<div className='movie__title'>{title}</div>
-				<StarRating />
+				<StarRating key='star-rate' />
 			</div>
 		);
 	}
