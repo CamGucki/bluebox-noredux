@@ -2,9 +2,12 @@
 	display: flex;
 }
 .category-filter {
+	justify-content: space-between;
+	width: 97vw;
 	display: grid;
 	padding: 10px;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	display: flex;
 }
 .category-btn {
 	width: 315px;
@@ -22,8 +25,8 @@
 }
 .movie-items {
 	display: grid;
-	grid-template-rows: 2fr;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+	width: 97vw;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-gap: 10px;
 	grid-row-gap: 90px;
 }
