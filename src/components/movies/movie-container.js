@@ -37,7 +37,7 @@ export default class MovieContainer extends Component {
 	}
 	getMovies(filter = null) {
 		axios
-			.get(" https://cjb-bbreviews.herokuapp.com/movies")
+			.get("https://cjb-bbreviews.herokuapp.com/movies")
 			.then((response) => {
 				if (filter) {
 					this.setState({
