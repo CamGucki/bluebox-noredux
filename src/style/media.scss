@@ -7,4 +7,20 @@
 		display: grid;
 		grid-template-columns: 1fr;
 	}
+	.add-movie-form {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+	.add-movie-btn {
+		cursor: pointer;
+		height: 42px;
+		font-size: 25px;
+		font-weight: 500;
+		border: 1px solid transparent;
+		transition: all 0.5s ease-in-out;
+		background-color: #3885ce;
+		color: white;
+		border-radius: 10px;
+		width: 150px;
+	}
 }

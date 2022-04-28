@@ -15,7 +15,8 @@ export default class MovieModal extends Component {
 				right: "auto",
 				marginRight: "-50%",
 				transform: "translate(-50%,-50%",
-				width: "900px",
+				width: "70VW",
+				height: "70vh",
 			},
 			overlay: {
 				backgroundColor: "rgba(1,1,1,0.75",

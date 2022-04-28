@@ -37,7 +37,8 @@ export default class MovieContainer extends Component {
 	}
 	getMovies(filter = null) {
 		axios
-			.get("https://cjb-bbreviews.herokuapp.com/movies")
+			.get("http://127.0.0.1:5000/movies")
+			//  https://cjb-bbreviews.herokuapp.com/movies
 			.then((response) => {
 				if (filter) {
 					this.setState({
@@ -59,12 +60,15 @@ export default class MovieContainer extends Component {
 	movieItems() {
 		return this.state.data.map((movie) => {
 			console.log("movie data", movie);
+
 			return (
 				<MovieItem
 					key={movie.id}
+					id={movie.id}
 					title={movie.title}
 					description={movie.description}
 					movieImg={movie.movieImg}
+					rating={movie.ratingValue}
 				/>
 			);
 		});
@@ -130,7 +134,6 @@ export default class MovieContainer extends Component {
 				</div>
 				<div className='addmovie-modal'>
 					<MovieModal
-						key='modal'
 						handleModalClose={this.handleModalClose}
 						modalIsOpen={this.state.movieModalIsOpen}
 					/>
