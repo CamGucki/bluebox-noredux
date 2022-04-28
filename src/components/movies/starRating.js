@@ -8,7 +8,7 @@ const StarRating = (props) => {
 	const starSwitch = (id) => {
 		setRating(rating + 1);
 		axios
-			.put(`http://127.0.0.1:5000/movie/${id}`, {
+			.put(`https://cjb-bbreviews.herokuapp.com/movie/${id}`, {
 				ratingValue: rating,
 			})
 			.then((response) => {

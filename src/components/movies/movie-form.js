@@ -19,7 +19,7 @@ export default class MovieForm extends Component {
 
 	handleSubmit(event) {
 		axios
-			.post("http://127.0.0.1:5000/movie", {
+			.post("https://cjb-bbreviews.herokuapp.com/movie", {
 				title: this.state.title,
 				description: this.state.description,
 				category: this.state.category,
