@@ -5,8 +5,8 @@ import { FaStar } from "react-icons/fa";
 const StarRating = (props) => {
 	const [rating, setRating] = useState(props.rating);
 
-	const starSwitch = (id) => {
-		setRating(rating + 1);
+	const starSwitch = (r, id) => {
+		setRating(r);
 		axios
 			.put(`https://cjb-bbreviews.herokuapp.com/movie/${id}`, {
 				ratingValue: rating,
@@ -28,7 +28,7 @@ const StarRating = (props) => {
 							type='radio'
 							name='rating'
 							value={ratingValue}
-							onClick={() => starSwitch(props.movie_id)}
+							onClick={() => starSwitch(ratingValue, props.movie_id)}
 							onMouseOver={() => setHover(ratingValue)}
 							onMouseOut={() => setHover(null)}
 						/>
